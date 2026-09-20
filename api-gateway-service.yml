@@ -8,7 +8,7 @@ app:
       - "/v1/auth/**"
       - "/webhook/**"
       - "/actuator/**"
-      - "/v1/operations/**"
+     
       
   rate-limit:
     method: fixed
@@ -40,7 +40,7 @@ spring:
             - id: operations-service
               uri: ${OPERATIONS_SERVICE_URI:lb://operations-service}
               predicates:
-                - Path=/webhook/**
+                 - Path=/webhook/**, /v1/operations/**
 
 jwt:
   secret-key: asfd9asfdaoijfalkjl23u4oi5jlkjf98790890890ugojvakglsdfjn8yuh
